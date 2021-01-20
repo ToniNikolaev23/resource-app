@@ -10,8 +10,9 @@
         >Add Resource</base-button
       >
     </base-card>
-
+    <keep-alive>
     <component :is="selectedComponent"></component>
+    </keep-alive>
   </div>
 </template>
 
@@ -53,13 +54,26 @@ export default {
   },
 provide(){
     return{
-        resources: this.storedResources
+        resources: this.storedResources,
+        addResource: this.addResource
     }
 },
   methods: {
     setComponent(tab) {
       this.selectedComponent = tab;
     },
+    addResource(title,description,link){
+        const newResource = {
+            id: new Date().toISOString(),
+            title: title,
+            description: description,
+            link: link
+        }
+
+        this.storedResources.unshift(newResource)
+
+        this.selectedComponent = 'stored-resources'
+    }
   },
 };
 </script>

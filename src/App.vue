@@ -1,9 +1,9 @@
 <template>
   <div>
     <the-header title="RememberMe"></the-header>
-  <keep-alive>
+
     <the-resources></the-resources>
-  </keep-alive>
+
   </div>
 </template>
 
