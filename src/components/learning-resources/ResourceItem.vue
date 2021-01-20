@@ -1,24 +1,23 @@
 <template>
-    <li>
-        <div>
-            <header>
-                <h3>{{title}}</h3>
-                <button>Delete</button>
-            </header>
-        </div>
-        <p>{{desc}}</p>
-        <nav>
-            <a :href="link">View resource</a>
-        </nav>
-    </li>
+  <li>
+    <base-card>
+      <header>
+        <h3>{{ title }}</h3>
+        <base-button mode="flat">Delete</base-button>
+      </header>
+
+      <p>{{ desc }}</p>
+      <nav>
+        <a :href="link">View resource</a>
+      </nav>
+    </base-card>
+  </li>
 </template>
 
 <script>
 export default {
-    props:[
-        'title', 'desc' , 'link'
-    ]
-}
+  props: ["title", "desc", "link"],
+};
 </script>
 
 <style scoped>
